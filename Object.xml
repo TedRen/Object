@@ -1,19 +1,9 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_whileUntil" id="23" inline="false" x="166" y="141">
-    <field name="MODE">WHILE</field>
+  <block type="controls_whileUntil" id="23" inline="false" x="165" y="156">
+    <field name="MODE">UNTIL</field>
     <value name="NUMBER">
-      <block type="logic_compare" id="30" inline="true">
-        <field name="OP">EQ</field>
-        <value name="A">
-          <block type="sensor_object" id="46">
-            <field name="OBJECT">LEFTFRONT</field>
-          </block>
-        </value>
-        <value name="B">
-          <block type="math_number" id="53">
-            <field name="NUM">50</field>
-          </block>
-        </value>
+      <block type="sensor_object" id="46">
+        <field name="OBJECT">LEFTFRONT</field>
       </block>
     </value>
     <statement name="DO">
@@ -23,23 +13,13 @@
             <field name="NUM">100</field>
           </block>
         </value>
+        <next>
+          <block type="movement_forward" id="10"></block>
+        </next>
       </block>
     </statement>
     <next>
-      <block type="movement_forward" id="10">
-        <next>
-          <block type="robot_delay" id="100" inline="true">
-            <value name="DELAY">
-              <block type="math_number" id="101">
-                <field name="NUM">4000</field>
-              </block>
-            </value>
-            <next>
-              <block type="movement_stop" id="98"></block>
-            </next>
-          </block>
-        </next>
-      </block>
+      <block type="movement_stop" id="98"></block>
     </next>
   </block>
 </xml>
